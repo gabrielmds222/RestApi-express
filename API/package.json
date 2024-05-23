@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node ./src/index.ts"
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "express": "^4.19.2",
     "pg": "^8.11.5",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "yarn": "^1.22.22"
   }
 }

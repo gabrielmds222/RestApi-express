@@ -7,7 +7,7 @@ AppDataSource.initialize().then(() => {
   app.use(express.json());
 
   app.get("/", (req, res) => {
-    return res.json("App rodando");
+    return res.json("App rodando com yarn");
   });
 
   return app.listen(process.env.PORT);
