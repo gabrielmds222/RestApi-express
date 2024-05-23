@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Room } from "./Room";
 
 @Entity("videos")
 export class Video {
@@ -10,4 +17,8 @@ export class Video {
 
   @Column({ type: "text" })
   url: string;
+
+  @ManyToOne(() => Room, (room) => room.videos)
+  @JoinColumn({ name: "room_id" })
+  room: Room;
 }
